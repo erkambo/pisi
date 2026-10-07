@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>PISI</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="icons/icon32.png" alt="" width="24" height="24">
+    <h1>PISI</h1>
+    <span id="status" class="status" role="status">Checking…</span>
+  </header>
+  <p id="page" class="pagestate" role="status" hidden></p>
+
+  <section>
+    <label class="row">
+      <input type="checkbox" id="site">
+      <span>
+        <strong>Play on <span id="host">this site</span></strong>
+        <small>On by default. PISI always steps off pages that ask for a password or card number, and skips mail, banks and password managers.</small>
+      </span>
+    </label>
+    <p id="nosite" class="note" hidden>PISI can't visit this kind of page.</p>
+    <label class="row">
+      <input type="checkbox" id="paused">
+      <span><strong>Pause everywhere</strong></span>
+    </label>
+  </section>
+
+  <section>
+    <label class="row">
+      <input type="checkbox" id="guard">
+      <span>
+        <strong>Guard my focus here</strong>
+        <small>During a focus block, PISI comes and sits on this site. Drag the cat off for five minutes (less each time you do it).</small>
+      </span>
+    </label>
+    <p id="guardwarn" class="warn" role="status" hidden></p>
+    <ul id="guarded" class="sites" aria-label="Sites PISI guards"></ul>
+    <div id="picks" class="picks" hidden>
+      <small>Quick picks:</small>
+      <div id="pickbtns" class="chips"></div>
+    </div>
+    <label class="row sub">
+      <input type="checkbox" id="fade">
+      <span><strong>Fade the page while I guard</strong></span>
+    </label>
+  </section>
+
+  <section>
+    <label class="row">
+      <input type="checkbox" id="mess">
+      <span>
+        <strong>Let PISI make a mess</strong>
+        <small>Now and then PISI knocks a word off the end of a line, or digs through a paragraph and sends the words flying. Only what you see changes; tidying up or reloading puts them back.</small>
+      </span>
+    </label>
+    <button id="tidy" type="button">Tidy up this page</button>
+  </section>
+
+  <footer>
+    <p class="note">Only talks to the PISI app on this computer. It sends the shape of the page (where paragraphs, headings and pictures are) and what's happening there (a video playing, you typing), never the words, never the address.</p>
+    <p class="note links"><a href="https://github.com/erkambo/pisi/issues/new/choose" target="_blank" rel="noopener">Report a bug</a> · <a href="mailto:boyaciogluerkam@gmail.com?subject=PISI%20extension" target="_blank" rel="noopener">Email the developer</a></p>
+    <p id="help" class="note" hidden>Start PISI, then open <b>Settings → Web pages → Set up browser bridge</b>.</p>
+  </footer>
+  <script src="lines.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

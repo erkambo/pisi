@@ -1,0 +1,2 @@
+# The same exact versions as every release build (see that file).
+-r ../windows/requirements-build.txt

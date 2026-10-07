@@ -1,0 +1,63 @@
+{
+  "family": "feline",
+  "format": "pisi-creature",
+  "generator": 2,
+  "genes": {
+    "body": {
+      "belly": 0.0,
+      "chest": 2.763051777353387,
+      "depth": 8.898551839609237,
+      "legs": 7.928423234322915,
+      "length": 10.620641116582895,
+      "paw": 3,
+      "thigh": 3.0665902545468144
+    },
+    "coat": {
+      "blaze": false,
+      "color": "ginger",
+      "patches": 5.0,
+      "pattern": "tabby",
+      "second": "",
+      "seed": 0,
+      "socks": true,
+      "stripes": 4.0,
+      "white": 0.5
+    },
+    "ears": {
+      "fold": false,
+      "height": 4,
+      "width": 3
+    },
+    "eyes": {
+      "left": "green",
+      "nose": "brick",
+      "odd": false,
+      "right": "blue"
+    },
+    "head": {
+      "big_eyes": false,
+      "cheeks": false,
+      "eye_gap": 4,
+      "face": 5,
+      "jaw": 2,
+      "neck": 9,
+      "width": 10
+    },
+    "motion": {
+      "blink": 0.19934615541954737,
+      "curious": 0.3132881860602886,
+      "energy": 0.45798388655115935,
+      "stride": 0.9307624424556056,
+      "tail_sway": 0.4323536132904721
+    },
+    "tail": {
+      "carry": 0.05324618232349576,
+      "fluff": 0.9782475318861065,
+      "hook": 0.74817923900748,
+      "length": 1.0964866461973362
+    }
+  },
+  "name": "Ginger",
+  "seed": 59,
+  "version": 1
+}

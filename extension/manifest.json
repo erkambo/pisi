@@ -1,0 +1,97 @@
+{
+  "manifest_version": 3,
+  "name": "PISI Desktop Pet",
+  "short_name": "PISI",
+  "version": "1.0.0",
+  "description": "Your PISI cat climbs onto the web pages you read. Needs the free PISI desktop app. Never sends page text or addresses.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA0tPQOzlKdY9CqhUSY+P4bGj2iALbAmfdH2TOIVrfbSozgjsFBRrQRUQ09KtUzZJox7sT9CMKgHpcJ7mQJ2CEvTzkgog2WKU6IRd9aUZbUNPfglLmanzjcJyT4XXh+7dExb8Y/8Gtml9KDhwos3nhHoZ+KUVzfcvXTcJ8wBlRfAty2migEF043IUOW1KMZU5vZsDaTyWb7DFD2cG+Eh/Y7kGWIy+GiojpLsBQBR8vTf8boBGeeYIOfg9GrHMwQb8I45V8hBJ8oT2wliZ86trwVrFL21wmSB2t4FJDk43pKXL5HAWSqP4jwvUMaxt877xKSv+p7xNCAsAVjhr+xcSdpQIDAQAB",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_title": "PISI",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js",
+    "scripts": [
+      "lines.js",
+      "background.js"
+    ]
+  },
+  "permissions": [
+    "nativeMessaging",
+    "storage",
+    "contextMenus",
+    "scripting",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "exclude_matches": [
+        "*://mail.google.com/*",
+        "*://accounts.google.com/*",
+        "*://*.outlook.com/*",
+        "*://outlook.live.com/*",
+        "*://outlook.office.com/*",
+        "*://login.microsoftonline.com/*",
+        "*://mail.yahoo.com/*",
+        "*://*.proton.me/*",
+        "*://*.icloud.com/*",
+        "*://*.paypal.com/*",
+        "*://*.stripe.com/*",
+        "*://*.wise.com/*",
+        "*://*.revolut.com/*",
+        "*://*.1password.com/*",
+        "*://*.bitwarden.com/*",
+        "*://*.lastpass.com/*",
+        "*://*.dashlane.com/*",
+        "*://*.okta.com/*",
+        "*://*.auth0.com/*",
+        "*://*.bank/*",
+        "*://*.chase.com/*",
+        "*://*.wellsfargo.com/*",
+        "*://*.bankofamerica.com/*",
+        "*://*.td.com/*",
+        "*://*.rbcroyalbank.com/*",
+        "*://*.scotiabank.com/*",
+        "*://*.cibc.com/*",
+        "*://*.bmo.com/*",
+        "*://*.hsbc.com/*",
+        "*://*.barclays.co.uk/*",
+        "*://*.monzo.com/*",
+        "*://*.isbank.com.tr/*",
+        "*://*.garantibbva.com.tr/*",
+        "*://*.ziraatbank.com.tr/*",
+        "*://*.turkiye.gov.tr/*"
+      ],
+      "js": [
+        "lines.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "pisi-pet@pisi.app",
+      "strict_min_version": "121.0"
+    }
+  },
+  "minimum_chrome_version": "121"
+}

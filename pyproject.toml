@@ -1,0 +1,55 @@
+# PISI, a desktop cat companion.
+#
+# The app itself is deliberately dependency-free beyond PyQt6, which is
+# installed from the system package manager (apt), NOT pip — see README.
+# This file is a config hub: project metadata + tool settings. The tools
+# (ruff, pytest) are dev conveniences; the app never imports them. CI runs
+# both.
+
+[project]
+name = "pisi"
+dynamic = ["version"]          # companion/__init__.py's __version__ is the one place
+description = "A desktop cat that keeps you company while you focus."
+readme = "README.md"
+authors = [{ name = "Erkam Boyacioglu" }]
+keywords = ["pomodoro", "desktop-pet", "focus", "pyqt6", "browser-extension"]
+license = "MIT"
+license-files = ["LICENSE", "assets/sounds/CREDITS.md"]
+requires-python = ">=3.10"
+# PyQt6 is a runtime dependency but is expected from the system (apt install
+# python3-pyqt6), so it is intentionally not pinned here for pip to resolve.
+dependencies = []
+
+[project.urls]
+Homepage = "https://erkamboyacioglu.com/pisi/"
+Source = "https://github.com/erkambo/pisi"
+Issues = "https://github.com/erkambo/pisi/issues"
+Privacy = "https://erkamboyacioglu.com/pisi/privacy/"
+
+[tool.pytest.ini_options]
+# Bare `pytest` from the repo root just works: tests live in tests/, and
+# conftest.py sets the Qt offscreen platform + a session QApplication.
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.setuptools.dynamic]
+version = { attr = "companion.__version__" }
+
+[tool.ruff]
+# CI runs `ruff check` (see .github/workflows/ci.yml).
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+# Imports are not auto-sorted on purpose: some modules must set things up
+# before Qt is imported (the X11/Wayland choice, the test platform).
+select = ["E", "F", "W", "UP", "B"]
+ignore = [
+    "E501",   # long lines: the formatter's job, not a bug
+    "E702",   # `a; b` on one line is used for short paired statements
+    "E731",   # small named lambdas
+    "E741",   # `l` for a line box reads fine here
+    "B007",   # unused loop variables that name what's unpacked
+    "B905",   # zip() without strict=: lengths are equal by construction
+    "UP031",  # %-formatting in a couple of byte-level spots
+]

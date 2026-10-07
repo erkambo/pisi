@@ -1,0 +1,6 @@
+# Exact versions for release builds and CI: a new upload of any of these can't
+# reach the installers without a reviewed bump (Dependabot proposes them).
+PyQt6==6.11.0
+tzdata==2026.5
+pyinstaller==6.22.3
+pytest==9.1.1

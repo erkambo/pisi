@@ -1,0 +1,8 @@
+{
+    "uuid": "pisi-corner@pisi",
+    "name": "PISI's corner",
+    "description": "Makes the things in PISI's corner (bed, bowl, toy basket) clickable and draggable where they stand over a panel or dock. Needs PISI, the desktop cat, running.",
+    "shell-version": ["45", "46", "47", "48", "49"],
+    "version": 4,
+    "url": "https://github.com/erkambo/pisi"
+}

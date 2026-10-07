@@ -1,0 +1,63 @@
+{
+ "format": "pisi-creature",
+ "version": 1,
+ "generator": 5,
+ "family": "feline",
+ "seed": 1369904039,
+ "name": "Long van (Erkam's PISI)",
+ "genes": {
+  "body": {
+   "length": 11.71310929153395,
+   "depth": 8.2416742387147,
+   "legs": 7.675346882786061,
+   "thigh": 2.6691808861121684,
+   "chest": 3.1513176919617925,
+   "belly": 0.3693185101170446,
+   "paw": 3
+  },
+  "head": {
+   "width": 10,
+   "face": 5,
+   "jaw": 2,
+   "neck": 9,
+   "cheeks": false,
+   "eye_gap": 4,
+   "big_eyes": false
+  },
+  "ears": {
+   "height": 5,
+   "width": 3,
+   "fold": false
+  },
+  "tail": {
+   "length": 0.7121496458209444,
+   "fluff": 1.0183128892179136,
+   "carry": -0.25072310766358685,
+   "hook": 0.36876550782951445
+  },
+  "coat": {
+   "color": "apricot",
+   "pattern": "van",
+   "second": "",
+   "white": 0.2670153231895444,
+   "stripes": 4.392904384822272,
+   "patches": 4.671992646349599,
+   "socks": true,
+   "blaze": true,
+   "seed": 165796
+  },
+  "eyes": {
+   "left": "amber",
+   "odd": false,
+   "right": "green",
+   "nose": "brick"
+  },
+  "motion": {
+   "energy": 0.6711473748448583,
+   "tail_sway": 0.67666008836568,
+   "stride": 0.986916002599133,
+   "blink": 0.5161067000702527,
+   "curious": 0.6016324719707279
+  }
+ }
+}

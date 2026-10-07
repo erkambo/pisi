@@ -1,0 +1,63 @@
+{
+  "family": "feline",
+  "format": "pisi-creature",
+  "generator": 2,
+  "genes": {
+    "body": {
+      "belly": 0.14885225132687624,
+      "chest": 2.571577309446264,
+      "depth": 9.391826822128406,
+      "legs": 8.516524717181053,
+      "length": 9.022871175399862,
+      "paw": 3,
+      "thigh": 3.2711641604877912
+    },
+    "coat": {
+      "blaze": false,
+      "color": "black",
+      "patches": 5.0,
+      "pattern": "calico",
+      "second": "",
+      "seed": 0,
+      "socks": true,
+      "stripes": 4.0,
+      "white": 0.55
+    },
+    "ears": {
+      "fold": false,
+      "height": 4,
+      "width": 3
+    },
+    "eyes": {
+      "left": "amber",
+      "nose": "pink",
+      "odd": false,
+      "right": "blue"
+    },
+    "head": {
+      "big_eyes": false,
+      "cheeks": false,
+      "eye_gap": 4,
+      "face": 5,
+      "jaw": 2,
+      "neck": 9,
+      "width": 10
+    },
+    "motion": {
+      "blink": 0.5070607617923811,
+      "curious": 0.33913657406742753,
+      "energy": 0.6379450524191896,
+      "stride": 0.9391322262977306,
+      "tail_sway": 0.14698126923331545
+    },
+    "tail": {
+      "carry": 0.36596021279257474,
+      "fluff": 0.9795178589749883,
+      "hook": 0.5957425270552134,
+      "length": 0.9209718661177645
+    }
+  },
+  "name": "Calico",
+  "seed": 37,
+  "version": 1
+}

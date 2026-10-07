@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.ruff_cache/
+
+# Local runtime data (lives in ~/.local/share, but ignore any stray copies)
+data.json
+*.log
+
+# Windows build outputs (windows\build.ps1)
+build/
+dist/
+.venv-build/
+windows/version_info.txt
+
+# PISI's Google OAuth client, baked into release builds by CI (never commit)
+companion/_google_client.py
+
+# Never commit: the paid sprite pack (licensed to Erkam, not redistributable)
+# and local review / calibration output
+*Carysaurus*.zip
+docs/pets/local/

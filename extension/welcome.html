@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to PISI</title>
+  <link rel="stylesheet" href="popup.css">
+  <link rel="stylesheet" href="welcome.css">
+</head>
+<body>
+  <main>
+    <header>
+      <img src="icons/icon128.png" alt="" width="64" height="64">
+      <div>
+        <h1>PISI is in your browser</h1>
+        <p id="status" class="status" role="status">Looking for PISI…</p>
+      </div>
+    </header>
+    <p id="help" class="card warnbox" hidden>
+      PISI isn't running yet. Start it, then open its <b>Settings → Web pages → Set up browser bridge</b>,
+      and restart your browser.
+    </p>
+    <p class="card tip">
+      <b>Pin me first:</b> click the puzzle piece in your toolbar and pin PISI. Everything below lives
+      in that menu, one click away.
+    </p>
+
+    <section class="card">
+      <h2>1. I play on your pages</h2>
+      <p>I climb onto the text you're reading, pounce on what you select and watch your videos with
+        you. The badge on my icon says what I'm up to: <span class="pill on">✓</span> playing here,
+        <span class="pill napping">zz</span> napping through a focus block,
+        <span class="pill guarding">hey</span> guarding this page.</p>
+      <p class="quiet">Right-click any page to throw me a toy or shine the laser.</p>
+    </section>
+
+    <section class="card">
+      <h2>2. I guard your focus</h2>
+      <p>Pick the sites that pull you away. During a focus block, open one and I'll come and sit on
+        it. Drag me off for five minutes (less each time you do it in the same block).</p>
+      <div id="picks" class="chips big" aria-label="Sites to guard"></div>
+      <p class="quiet">Any other site: open it, then tick <b>Guard my focus here</b> in my menu, or
+        right-click the page and pick <b>PISI, guard this site</b>.</p>
+      <label class="row">
+        <input type="checkbox" id="fade">
+        <span><strong>Fade the page while I guard</strong>
+          <small>A soft blur behind me until you leave or drag me off.</small></span>
+      </label>
+    </section>
+
+    <section class="card">
+      <h2>3. I make a bit of a mess</h2>
+      <p>Now and then I knock a word off the end of a line, or dig through a paragraph and send the
+        words flying. Only what you see changes: reload, or <b>Tidy up this page</b> in my menu, and
+        they're back.</p>
+      <label class="row">
+        <input type="checkbox" id="mess">
+        <span><strong>Let PISI make a mess</strong></span>
+      </label>
+    </section>
+
+    <p class="note">I only talk to the PISI app on this computer. It gets the shape of the page
+      (where paragraphs, headings and pictures are) and what's happening there, never the words, never
+      the address. The sites you guard stay in your browser.</p>
+    <p class="note links"><a href="https://github.com/erkambo/pisi/issues/new/choose" target="_blank" rel="noopener">Report a bug</a> · <a href="mailto:boyaciogluerkam@gmail.com?subject=PISI%20extension" target="_blank" rel="noopener">Email the developer</a></p>
+  </main>
+  <script src="lines.js"></script>
+  <script src="welcome.js"></script>
+</body>
+</html>

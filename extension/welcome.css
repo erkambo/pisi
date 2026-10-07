@@ -1,0 +1,19 @@
+body { width: auto; min-height: 100vh; font-size: 15px; line-height: 1.5; }
+main { max-width: 640px; margin: 0 auto; padding: 32px 16px 48px; }
+main header { border: 0; padding: 0 0 20px; gap: 16px; }
+main header img { image-rendering: pixelated; border-radius: 14px; }
+h1 { font-size: 24px; margin: 0; }
+h2 { font-size: 17px; margin: 0 0 6px; }
+.status { font-size: 14px; margin: 2px 0 0; }
+.card { border: 1px solid var(--line); border-radius: 12px; padding: 14px 18px; margin: 0 0 14px; }
+.card p { margin: 0 0 8px; }
+.tip { background: color-mix(in srgb, var(--accent) 10%, transparent); }
+.warnbox { border-color: var(--warn); color: var(--warn); }
+.quiet { color: var(--quiet); font-size: 14px; }
+.card .row { margin-top: 10px; }
+.chips.big { margin: 12px 0; gap: 8px; }
+.chips.big button { font-size: 14px; padding: 5px 14px; }
+.pill { display: inline-block; min-width: 22px; padding: 0 6px; border-radius: 6px; color: #fff;
+        font-size: 12px; font-weight: 600; text-align: center; }
+.pill.on { background: #2e9e5b; } .pill.napping { background: #7a6fd0; } .pill.guarding { background: #d9534f; }
+.note { font-size: 13px; }

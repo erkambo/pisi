@@ -1,0 +1,16 @@
+name: An idea
+description: Something new for the cat, or a way to make PISI better
+labels: [idea]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like?
+      description: Tell us what you'd use it for, not just what it is.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Anything else?
+      description: Sketches, links, other apps that do something similar...

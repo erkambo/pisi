@@ -1,0 +1,63 @@
+{
+  "family": "feline",
+  "format": "pisi-creature",
+  "generator": 2,
+  "genes": {
+    "body": {
+      "belly": 0.0,
+      "chest": 3.2615635359083894,
+      "depth": 8.556867571111278,
+      "legs": 7.921125436995353,
+      "length": 10.235367397317829,
+      "paw": 3,
+      "thigh": 3.1811585262043818
+    },
+    "coat": {
+      "blaze": false,
+      "color": "black",
+      "patches": 5.0,
+      "pattern": "tuxedo",
+      "second": "",
+      "seed": 0,
+      "socks": true,
+      "stripes": 4.0,
+      "white": 0.5
+    },
+    "ears": {
+      "fold": false,
+      "height": 4,
+      "width": 3
+    },
+    "eyes": {
+      "left": "green",
+      "nose": "pink",
+      "odd": false,
+      "right": "blue"
+    },
+    "head": {
+      "big_eyes": false,
+      "cheeks": true,
+      "eye_gap": 4,
+      "face": 5,
+      "jaw": 2,
+      "neck": 9,
+      "width": 10
+    },
+    "motion": {
+      "blink": 0.802181418223916,
+      "curious": 0.739778778738332,
+      "energy": 0.34025781957130957,
+      "stride": 0.9492509987331522,
+      "tail_sway": 0.6313948606468732
+    },
+    "tail": {
+      "carry": 0.9307031049946255,
+      "fluff": 0.9256342183943772,
+      "hook": 1.4189392070210776,
+      "length": 1.0304399552315617
+    }
+  },
+  "name": "Tuxedo",
+  "seed": 23,
+  "version": 1
+}

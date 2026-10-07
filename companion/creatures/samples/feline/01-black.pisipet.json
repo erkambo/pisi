@@ -1,0 +1,63 @@
+{
+  "family": "feline",
+  "format": "pisi-creature",
+  "generator": 2,
+  "genes": {
+    "body": {
+      "belly": 0.0,
+      "chest": 3.0,
+      "depth": 9.0,
+      "legs": 8.0,
+      "length": 10.0,
+      "paw": 3,
+      "thigh": 3.0
+    },
+    "coat": {
+      "blaze": false,
+      "color": "black",
+      "patches": 5.0,
+      "pattern": "solid",
+      "second": "",
+      "seed": 0,
+      "socks": true,
+      "stripes": 4.0,
+      "white": 0.5
+    },
+    "ears": {
+      "fold": false,
+      "height": 4,
+      "width": 3
+    },
+    "eyes": {
+      "left": "amber",
+      "nose": "plum",
+      "odd": false,
+      "right": "blue"
+    },
+    "head": {
+      "big_eyes": false,
+      "cheeks": false,
+      "eye_gap": 4,
+      "face": 5,
+      "jaw": 2,
+      "neck": 9,
+      "width": 10
+    },
+    "motion": {
+      "blink": 0.5,
+      "curious": 0.5,
+      "energy": 0.5,
+      "stride": 1.0,
+      "tail_sway": 0.5
+    },
+    "tail": {
+      "carry": 0.0,
+      "fluff": 1.0,
+      "hook": 1.0,
+      "length": 1.0
+    }
+  },
+  "name": "Black",
+  "seed": 11,
+  "version": 1
+}

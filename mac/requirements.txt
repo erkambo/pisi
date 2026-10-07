@@ -1,0 +1,2 @@
+# macOS runtime dependencies (Linux gets PyQt6 from apt - see README).
+PyQt6>=6.7

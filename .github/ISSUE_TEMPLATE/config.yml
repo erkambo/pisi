@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security problem
+    url: https://github.com/erkambo/pisi/security/advisories/new
+    about: Privately, please, never in a public issue.
+  - name: Privacy policy
+    url: https://erkamboyacioglu.com/pisi/privacy/
+    about: What PISI does with your data.
