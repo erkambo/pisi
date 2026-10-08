@@ -1225,8 +1225,9 @@ class Companion:
         self._tour.activateWindow()
 
     def _set_up_extension(self) -> None:
-        """Register the browser bridge, then open the extension's folder to
-        load into the browser (the tutorial's "Set it up")."""
+        """Register the browser bridge, then open the extension's page on
+        the Chrome Web Store (Firefox only: its folder, to load by hand). The
+        tutorial's "Set it up"."""
         from PyQt6.QtCore import QUrl
         from PyQt6.QtGui import QDesktopServices
         from PyQt6.QtWidgets import QMessageBox
@@ -1241,8 +1242,12 @@ class Companion:
                                     "I couldn't find Chrome, Brave, Edge, Vivaldi or "
                                     "Firefox on this computer.")
             return
-        QDesktopServices.openUrl(QUrl.fromLocalFile(str(bridge.extension_dir())))
-        self.say(f"ready for {', '.join(done)}: load the folder I opened 🐾", seconds=8)
+        if done == ["Firefox"]:                      # not in Firefox's store yet: load it by hand
+            QDesktopServices.openUrl(QUrl.fromLocalFile(str(bridge.extension_dir())))
+            self.say("ready for Firefox: load the folder I opened 🐾", seconds=8)
+            return
+        QDesktopServices.openUrl(QUrl(bridge.STORE_URL))
+        self.say("ready! add me from the Chrome Web Store page I opened 🐾", seconds=8)
 
     def open_settings(self):
         if SettingsDialog(self.store, self.calendar, self.gcal,

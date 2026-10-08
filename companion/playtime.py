@@ -818,6 +818,15 @@ class PlayTime(QObject):
             self._set_plan("trip")
             self._pounce_choice = None
             return True
+        if self._leap_at_toy():
+            return True
+        kind = sp.toward(x, y - 2)                     # nowhere to stand by it: a leap below it
+        if kind is not None:
+            self._spend("climb" if kind in ("climb", "scale") else "leap" if kind == "hop" else
+                        "run", COST["run_s"] if kind in ("walk", "run") else None)
+            self.trips += 1
+            self._set_plan("trip")
+            return True
         if toy.ledge is None and sp.ledge() is not None and \
                 sp.get_down(sp.x() + (x - self._cat_x())):     # it's down on the floor: get down
             self._spend("leap")
@@ -830,6 +839,45 @@ class PlayTime(QObject):
             self._said_unreachable = now
             self.note.emit("out of reach")
         self._watch(toy.center_x(), up=True)
+        return True
+
+    def _leap_at_toy(self) -> bool:
+        """The toy is up somewhere the cat can't stand (on a button, a ledge
+        with no room over it) but within a leap of where it is: under it,
+        then up on its hind legs' worth of a jump to knock it down."""
+        sp, toy = self.sprite, self.toy
+        body = sp._body()
+        height = sp.ground_line() - toy.ground_y()
+        if height <= 0 or height > body.max_rise * 0.85:
+            return False
+        x = toy.center_x()
+        dx = x - self._cat_x()
+        if abs(dx) > body.w * 0.3:
+            to = sp._on_ledge_x(sp.x() + dx)
+            if abs(x - (to - sp.x() + self._cat_x())) > body.w * 0.3:
+                return False                           # its ledge doesn't go under it
+            sp.run_to(to, self._gait(abs(dx) > 140))
+            self._set_plan("approach")
+            return True
+        sp.face(x)
+        sp.jump_up(height)                             # high enough for its paws to get there
+        self._spend("pounce")
+
+        def knock():
+            """Only if a paw is on it: no batting it from across the gap."""
+            if self.toy is not toy or toy.ledge is None or toy.held or toy.carried:
+                return
+            paw = sp.paw_global()
+            px, py = (paw.x(), paw.y()) if paw is not None else (self._cat_x(), sp.y())
+            slack = max(toy.tw, toy.th) * 0.5
+            if toy.x_f - slack <= px <= toy.x_f + toy.tw + slack and \
+                    toy.y_f - slack <= py <= toy.y_f + toy.th + slack:
+                toy.ledge = None
+                toy.hit(sp.facing * random.uniform(160.0, 320.0), -random.uniform(80.0, 200.0))
+        if "jump" in sp.sheet.anims:
+            for fi in range(2, 8):                     # any frame of the jump its paw touches it
+                sp.on_frame("jump", fi, knock)
+        self._set_plan("bat", 0.9)
         return True
 
     def _page_trip(self, dot: QPoint, height: float, body: float, now: float) -> bool:

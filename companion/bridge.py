@@ -38,6 +38,7 @@ HOST_NAME = "app.pisi.bridge"
 CHROME_EXTENSION_ID = "aghakdlloghojgociilficjhadgilnlh"   # the Chrome Web Store's (= the manifest "key")
 OLD_CHROME_IDS = ("hdeebgmdflilpmcmkggmljeoaajaplbe",)      # copies loaded by hand before the store
 FIREFOX_EXTENSION_ID = "pisi-pet@pisi.app"
+STORE_URL = "https://chromewebstore.google.com/detail/pisi-desktop-pet/" + CHROME_EXTENSION_ID
 MAX_MESSAGE = 1 << 20          # browsers cap host->extension messages at 1 MB
 
 

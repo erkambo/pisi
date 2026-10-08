@@ -11,10 +11,13 @@
 [![MIT licence](https://img.shields.io/github/license/erkambo/pisi)](LICENSE)
 
 [Download](https://github.com/erkambo/pisi/releases/latest) ·
+[Browser extension](https://chromewebstore.google.com/detail/pisi-desktop-pet/aghakdlloghojgociilficjhadgilnlh) ·
 [Website](https://erkamboyacioglu.com/pisi/) ·
 [Privacy](https://erkamboyacioglu.com/pisi/privacy/)
 
 </div>
+
+https://github.com/user-attachments/assets/f15be929-fac8-41eb-b0c9-622ef731382a
 
 PISI wanders around your screen, curls up for a nap while you work through a
 Pomodoro, and wants to play when your break comes. Each focus block you
@@ -58,10 +61,9 @@ proves it was built here, from this code.
 
 1. In PISI: **Settings → Web pages → Set up browser bridge**. This lets the
    extension talk to PISI.
-2. Get the extension. It's on its way to the Chrome Web Store (Chrome, Brave,
-   Edge, Vivaldi). Until then, click **Show extension folder** in the same
-   place, open your browser's extensions page, turn on **Developer mode**,
-   click **Load unpacked** and pick that folder. Firefox: see
+2. Get the extension from the
+   [Chrome Web Store](https://chromewebstore.google.com/detail/pisi-desktop-pet/aghakdlloghojgociilficjhadgilnlh)
+   (Chrome, Brave, Edge, Vivaldi). Firefox: see
    [extension/README.md](extension/README.md).
 3. Pin it. Its menu turns the cat off for a site, guards the sites you'd rather
    avoid during focus, and switches the mess on or off.

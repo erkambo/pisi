@@ -56,14 +56,16 @@ isn't running, or web pages are off in its settings) the menu says so.
 | Where it sends it | Only to the PISI app on this computer, through the browser's native messaging (no network) |
 | What it changes | Only when PISI knocks a word off or digs: those words are hidden (their space stays) and a copy of each flies off. Never forms or editable text. Reload, or "Tidy up this page", to undo; "Let PISI make a mess" off to stop. While the cat guards a page, a see-through blur sits over it ("Fade the page while I guard" off to stop) |
 
-## Set up (until it's in the stores)
+## Set up
 
 1. In PISI: **Settings → Web pages → Set up browser bridge** (or
    `python3 -m companion --install-browser-bridge`). This registers the small
    relay program the browser talks to.
-2. Load this folder into your browser:
-   * **Chrome / Brave / Edge / Vivaldi:** open the extensions page, turn on
-     **Developer mode**, click **Load unpacked**, pick this `extension` folder.
+2. Add the extension to your browser:
+   * **Chrome / Brave / Edge / Vivaldi:** from the
+     [Chrome Web Store](https://chromewebstore.google.com/detail/pisi-desktop-pet/aghakdlloghojgociilficjhadgilnlh).
+     To try changes to this folder, load it instead: extensions page,
+     **Developer mode**, **Load unpacked**, pick this `extension` folder.
    * **Firefox:** open `about:debugging#/runtime/this-firefox`, click **Load
      Temporary Add-on…**, pick `manifest.json`. Firefox forgets it on restart
      until the add-on is signed.

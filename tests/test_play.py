@@ -711,3 +711,33 @@ def test_every_kind_of_toy_gets_chased_and_caught(play, item_id):
         seen.update(run(sp, pt, 700))
     assert seen["bat"] or seen["pounce"], seen
     assert pt.catches >= 1, (item_id, seen)
+
+
+def test_a_toy_on_a_button_it_cant_stand_on_gets_knocked_down(play):
+    from companion.perch import Box
+    sp, pt = play
+    from companion.sprite import W
+    r = sp._screen_rect()
+    floor = sp.floor_line(sp.screen())
+    assert pt.start_toy("toy.yarn_red")
+    body = sp._body()
+    w = pt.toy.tw + 6
+    top = floor - body.stand * 1.3                      # a short leap up
+    button = Box(r.left() + 500, top, r.left() + 500 + w, top + 30, "button", 0)
+    gap = (pt.toy.th + body.lowest) / 2                 # room for the toy, not the cat
+    over = Box(r.left() + 400, top - gap - 200, r.left() + 700, top - gap, "img", 1)
+    sp.surfaces = _Page([button, over])
+    sp.move(r.left() + 300 - W // 2, sp._floor_y())
+    sp._sync_fpos()
+    assert all(sg.kind != "button" for sg in sp._segments()), "the cat fits on the button"
+    notes = []
+    pt.note.connect(notes.append)
+    _toy_on_top(sp, pt, [button], r.left() + 500 + w / 2)
+    seen = collections.Counter()
+    for _ in range(600):
+        seen.update(run(sp, pt, 1, lambda: setattr(pt, "stamina", max(pt.stamina, 0.8))))
+        if pt.toy.ledge is None:
+            break
+    assert pt.toy.ledge is None, seen                   # swatted off the button
+    assert "out of reach" not in notes
+    assert not sp._perched
