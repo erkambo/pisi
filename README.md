@@ -17,6 +17,8 @@
 
 </div>
 
+https://github.com/user-attachments/assets/f15be929-fac8-41eb-b0c9-622ef731382a
+
 PISI wanders around your screen, curls up for a nap while you work through a
 Pomodoro, and wants to play when your break comes. Each focus block you
 finish earns it a treat; save them up for goodies! Install the browser extension and it climbs, and interacts with
