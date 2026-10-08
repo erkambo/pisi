@@ -613,9 +613,14 @@ class SettingsDialog(QDialog):
         wrow = QHBoxLayout()
         bridge_btn = QPushButton("Set up browser bridge")
         bridge_btn.clicked.connect(self._setup_bridge)
+        store_btn = QPushButton("Get the extension")
+        store_btn.setToolTip("Its page on the Chrome Web Store (Chrome, Brave, Edge, Vivaldi)")
+        store_btn.clicked.connect(self._open_store)
         ext_btn = QPushButton("Show extension folder")
+        ext_btn.setToolTip("For Firefox, which loads it from this folder for now")
         ext_btn.clicked.connect(self._show_extension)
         wrow.addWidget(bridge_btn)
+        wrow.addWidget(store_btn)
         wrow.addWidget(ext_btn)
         wrow.addStretch(1)
         ww = QWidget(); ww.setLayout(wrow)
@@ -841,9 +846,9 @@ class SettingsDialog(QDialog):
         have = bridge.installed() if done is None else done
         if have:
             self.bridge_status.setText(
-                "Bridge set up for " + ", ".join(have) + ". In your browser, load the "
-                "extension folder (Extensions → Developer mode → Load unpacked; "
-                "Firefox: about:debugging → Load Temporary Add-on → manifest.json), "
+                "Bridge set up for " + ", ".join(have) + ". Add the extension from the "
+                "Chrome Web Store (Get the extension; Firefox: Show extension folder, "
+                "then about:debugging → Load Temporary Add-on → manifest.json), "
                 "then open any article and watch PISI hop on.")
         else:
             self.bridge_status.setText(
@@ -885,6 +890,10 @@ class SettingsDialog(QDialog):
     def _feedback(self) -> None:
         from .feedback import FeedbackDialog
         FeedbackDialog(self).exec()
+
+    def _open_store(self) -> None:
+        from . import bridge
+        QDesktopServices.openUrl(QUrl(bridge.STORE_URL))
 
     def _show_extension(self) -> None:
         from . import bridge
@@ -1011,9 +1020,8 @@ class TutorialDialog(QDialog):
              "on it during focus blocks."
              "<br><br>"
              "<a href='extension'>Set it up</a>: I'll get your browser ready "
-             "and open the extension's folder. Then, on your browser's "
-             "extensions page, turn on <b>Developer mode</b>, click <b>Load "
-             "unpacked</b> and pick that folder."),
+             "and open my page on the Chrome Web Store. Click <b>Add to "
+             "Chrome</b> there (it works in Brave, Edge and Vivaldi too)."),
             (None, "🗓", "Your calendar",
              "Both optional, in <b>Settings</b>:<br>"
              "• Add your calendar's <b>iCal address</b> and I'll read it to tell "
